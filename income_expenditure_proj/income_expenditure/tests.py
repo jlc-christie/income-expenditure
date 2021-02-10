@@ -17,18 +17,23 @@ class IEStatementTestCase(TestCase):
         user.last_name = 'Ives'
         user.save()
         person = Person.objects.create(user=user, address=address)
-        statement = IEStatement.objects.create(
+        statement = self.create_statement(person)
+
+    @staticmethod
+    def create_statement(person, salary=2500, other_income=500, mortgage=600, rent=0, utilities=200, travel=200,
+                         food=300, loans=500, credit_cards=300, expenditure_other=250):
+        return IEStatement.objects.create(
             person=person,
-            salary=2500,
-            income_other=500,
-            mortgage=600,
-            rent=0,
-            utilities=200,
-            travel=200,
-            food=300,
-            loans=500,
-            credit_cards=300,
-            expenditure_other=250
+            salary=salary,
+            income_other=other_income,
+            mortgage=mortgage,
+            rent=rent,
+            utilities=utilities,
+            travel=travel,
+            food=food,
+            loans=loans,
+            credit_cards=credit_cards,
+            expenditure_other=expenditure_other
         )
 
     def test_income(self):
@@ -46,4 +51,28 @@ class IEStatementTestCase(TestCase):
     def test_disposable_income(self):
         statement = IEStatement.objects.get(id=1)
         self.assertEqual(statement.disposable_income, 3000-2350)
+
+    def test_ie_ratio_grade_above_50(self):
+        statement = IEStatement.objects.get(id=1)
+        self.assertEqual(statement.income_expenditure_grade, 'D')
+
+    def test_ie_ratio_grade_above_100(self):
+        person = Person.objects.get(id=1)
+        statement = self.create_statement(person, mortgage=2000)  # results in expenditure > income, i.e. >100% IE ratio
+        self.assertEqual(statement.income_expenditure_grade, 'D')
+
+    def test_ie_ratio_grade_C(self):
+        person = Person.objects.get(id=1)
+        statement = self.create_statement(person, salary=4500)  # 47% IE Ratio
+        self.assertEqual(statement.income_expenditure_grade, 'C')
+
+    def test_ie_ratio_grade_B(self):
+        person = Person.objects.get(id=1)
+        statement = self.create_statement(person, salary=7500)  # 29% IE Ratio
+        self.assertEqual(statement.income_expenditure_grade, 'B')
+
+    def test_ie_ratio_grade_A(self):
+        person = Person.objects.get(id=1)
+        statement = self.create_statement(person, salary=24500)  # 9% IE Ratio
+        self.assertEqual(statement.income_expenditure_grade, 'A')
 
