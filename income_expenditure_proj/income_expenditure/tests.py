@@ -35,3 +35,15 @@ class IEStatementTestCase(TestCase):
         statement = IEStatement.objects.get(id=1)
         self.assertEqual(statement.income, 3000)
 
+    def test_expenditure(self):
+        statement = IEStatement.objects.get(id=1)
+        self.assertEqual(statement.expenditure, 2350)
+
+    def test_ie_ratio(self):
+        statement = IEStatement.objects.get(id=1)
+        self.assertAlmostEqual(statement.income_expenditure_ratio, 2350/3000)
+
+    def test_disposable_income(self):
+        statement = IEStatement.objects.get(id=1)
+        self.assertEqual(statement.disposable_income, 3000-2350)
+
