@@ -52,8 +52,7 @@ class IEStatement(models.Model):
 
     @property
     def income_expenditure_ratio(self, percentage=True):
-        ratio = self.expenditure / self.income
-        return f"{trunc(ratio*100)}" if percentage else ratio
+        return self.expenditure / self.income
 
     @property
     def disposable_income(self):
