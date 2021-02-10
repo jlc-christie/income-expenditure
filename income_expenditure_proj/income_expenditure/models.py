@@ -55,5 +55,17 @@ class IEStatement(models.Model):
         return self.expenditure / self.income
 
     @property
+    def income_expenditure_grade(self):
+        ratio = self.income_expenditure_ratio
+        if ratio < 0.1:
+            return 'A'
+        elif ratio < 0.3:
+            return 'B'
+        elif ratio < 0.5:
+            return 'C'
+        else:
+            return 'D'
+
+    @property
     def disposable_income(self):
         return self.income - self.expenditure
