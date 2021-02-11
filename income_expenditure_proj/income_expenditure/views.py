@@ -41,9 +41,14 @@ class IEStatementList(LoginRequiredMixin, ListView):
     model = IEStatement
     paginate_by = 10
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['latest_statement'] = self.get_queryset().latest('id')
+        return context
+
     def get_queryset(self):
         if hasattr(self.request.user, 'person'):
-            return IEStatement.objects.filter(person=self.request.user.person)
+            return IEStatement.objects.filter(person=self.request.user.person).order_by('-id')
         else:
             return IEStatement.objects.none()
 

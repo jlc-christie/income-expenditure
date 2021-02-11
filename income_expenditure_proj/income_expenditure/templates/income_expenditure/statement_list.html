@@ -14,7 +14,7 @@ active
         <div class="row py-5">
             <div class="col" id="current-ie-ratio">
                 <div class="card mx-5 pt-3">
-                    <h1 class="m-auto">85%</h1>
+                    <h1 class="m-auto">{% widthratio latest_statement.income_expenditure_ratio 1 100 %}%</h1>
                     <div class="card-body">
                         <h5 class="card-title">Income-to-Expenditure Ratio</h5>
                         <p class="card-text">The percentage of your income you spend each month.</p>
@@ -23,7 +23,7 @@ active
             </div>
             <div class="col" id="current-disposable-income">
                 <div class="card mx-5 pt-3">
-                    <h1 class="m-auto">£1,250</h1>
+                    <h1 class="m-auto">£{{ latest_statement.disposable_income|intcomma }}</h1>
                     <div class="card-body">
                         <h5 class="card-title">Disposable Income</h5>
                         <p class="card-text">
@@ -34,7 +34,7 @@ active
             </div>
             <div class="col" id="current-ie-grade">
                 <div class="card mx-5 pt-3">
-                    <h1 class="m-auto">D</h1>
+                    <h1 class="m-auto">{{ latest_statement.income_expenditure_grade }}</h1>
                     <div class="card-body">
                         <h5 class="card-title">Income-to-Expenditure Grade</h5>
                         <p class="card-text">
@@ -54,7 +54,6 @@ active
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Submitted</th>
                         <th scope="col">Ratio</th>
                         <th scope="col">Disposable Income</th>
                         <th scope="col">Grade</th>
@@ -65,7 +64,6 @@ active
                     {# This hacky linkable row is only used as a workaround as it's a sample project #}
                     <tr style="cursor:pointer" onclick="window.location='/statements/{{ statement.id }}'">
                         <th scope="row">{{ statement.id }}</th>
-                        <td>12/07/2020</td>
                         <td>{% widthratio statement.income_expenditure_ratio 1 100 %}%</td>
                         <td>£{{ statement.disposable_income|intcomma }}</td>
                         <td>{{ statement.income_expenditure_grade }}</td>
