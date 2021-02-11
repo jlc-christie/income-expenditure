@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd3aab48-1d41-4f92-83ec-f2cb505aa6db" name="Default Changelist" comment="" />
+    <list default="true" id="dd3aab48-1d41-4f92-83ec-f2cb505aa6db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/new_statement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -17,9 +40,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.local/share/virtualenvs/income-expenditure-6qJLDAMl/bin/python3.8" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="Django Runserver" type="PythonConfigurationType" factoryName="Python">
@@ -29,7 +54,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/.local/share/virtualenvs/income-expenditure-6qJLDAMl/bin/Python" />
+      <option name="SDK_HOME" value="$USER_HOME$/.local/share/virtualenvs/income-expenditure-6qJLDAMl/bin/python3.8" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/income_expenditure_proj" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -95,5 +120,28 @@
       <updated>1612962844814</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
