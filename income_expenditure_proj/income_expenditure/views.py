@@ -36,7 +36,7 @@ class IEStatementCreate(LoginRequiredMixin, FormView):
         return super().form_valid(form)
 
 
-class IEStatementList(ListView):
+class IEStatementList(LoginRequiredMixin, ListView):
     template_name = 'income_expenditure/statement_list.html'
     model = IEStatement
     paginate_by = 10

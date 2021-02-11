@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd3aab48-1d41-4f92-83ec-f2cb505aa6db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/new_statement.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/income_expenditure_proj/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/new_statement.html" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/new_statement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/statement_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/statement_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/statement_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/income_expenditure/statement_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/income_expenditure_proj/income_expenditure_proj/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

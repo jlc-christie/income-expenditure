@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{ object }}
-</body>
-</html>
+{% extends 'income_expenditure/base.html' %}
+
+{% block title %}
+Income Expenditure Statement #{{ object.id }}
+{% endblock %}
+
+{% block content %}
+    {{ object }}
+{% endblock %}

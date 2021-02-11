@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% for statement in object_list %}
-  {{ statement.income }}<br>
-{% endfor %}
-</body>
-</html>
+{% extends 'income_expenditure/base.html' %}
+
+{% block title %}
+Income Expenditure Statements
+{% endblock %}
+
+{% block statements_active %}
+active
+{% endblock %}
+
+{% block content %}
+    {% for statement in object_list %}
+        {{ statement.income }} <br>
+    {% endfor %}
+{% endblock %}

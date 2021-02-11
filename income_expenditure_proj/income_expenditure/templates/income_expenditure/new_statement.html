@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Statements</title>
-</head>
-<body>
+{% extends 'income_expenditure/base.html' %}
+
+{% block title %}
+Create a new Income Expenditure Statement
+{% endblock %}
+
+{% block content %}
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
-</body>
-</html>
+{% endblock %}
