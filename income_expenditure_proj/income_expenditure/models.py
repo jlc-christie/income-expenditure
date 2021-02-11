@@ -1,8 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from math import trunc
-
 
 class Address(models.Model):
     paon = models.CharField(max_length=80)

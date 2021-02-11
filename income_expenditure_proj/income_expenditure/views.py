@@ -1,10 +1,10 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.views.generic import FormView, ListView
+from django.views.generic import FormView, ListView, DetailView
 
 from .forms import IEStatementForm, PersonForm
 from .models import IEStatement
@@ -42,7 +42,17 @@ class IEStatementList(ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        if self.request.user.is_authenticated and hasattr(self.request.user, 'person'):
+        if hasattr(self.request.user, 'person'):
             return IEStatement.objects.filter(person=self.request.user.person)
         else:
             return IEStatement.objects.none()
+
+
+class IEStatementDetail(UserPassesTestMixin, DetailView):
+    template_name = 'income_expenditure/statement_detail.html'
+    model = IEStatement
+
+    def test_func(self):
+        statement = self.get_object()
+        person = self.request.user.person if hasattr(self.request.user, 'person') else None
+        return statement.person == person
