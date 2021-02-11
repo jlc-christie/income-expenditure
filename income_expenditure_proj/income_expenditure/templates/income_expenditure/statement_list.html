@@ -1,4 +1,5 @@
 {% extends 'income_expenditure/base.html' %}
+{% load humanize %}
 
 {% block title %}
 Income Expenditure Statements
@@ -9,7 +10,69 @@ active
 {% endblock %}
 
 {% block content %}
-    {% for statement in object_list %}
-        {{ statement.income }} <br>
-    {% endfor %}
+    <div class="container-fluid" id="current-ie-status">
+        <div class="row py-5">
+            <div class="col" id="current-ie-ratio">
+                <div class="card mx-5 pt-3">
+                    <h1 class="m-auto">85%</h1>
+                    <div class="card-body">
+                        <h5 class="card-title">Income-to-Expenditure Ratio</h5>
+                        <p class="card-text">The percentage of your income you spend each month.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="current-disposable-income">
+                <div class="card mx-5 pt-3">
+                    <h1 class="m-auto">£1,250</h1>
+                    <div class="card-body">
+                        <h5 class="card-title">Disposable Income</h5>
+                        <p class="card-text">
+                            How much money you have left over at the end of the month.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="current-ie-grade">
+                <div class="card mx-5 pt-3">
+                    <h1 class="m-auto">D</h1>
+                    <div class="card-body">
+                        <h5 class="card-title">Income-to-Expenditure Grade</h5>
+                        <p class="card-text">
+                            Grading system is from D to A. Grade is calculated using your ratio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="statement-list">
+        <h3>Income-to-Expenditure Statements</h3>
+        <p>Click on one of the statements in the table below to see extra details</p>
+        <div class="container px-5 pt-4" id="table-container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Submitted</th>
+                        <th scope="col">Ratio</th>
+                        <th scope="col">Disposable Income</th>
+                        <th scope="col">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for statement in object_list  %}
+                    {# This hacky linkable row is only used as a workaround as it's a sample project #}
+                    <tr style="cursor:pointer" onclick="window.location='/statements/{{ statement.id }}'">
+                        <th scope="row">{{ statement.id }}</th>
+                        <td>12/07/2020</td>
+                        <td>{% widthratio statement.income_expenditure_ratio 1 100 %}%</td>
+                        <td>£{{ statement.disposable_income|intcomma }}</td>
+                        <td>{{ statement.income_expenditure_grade }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
