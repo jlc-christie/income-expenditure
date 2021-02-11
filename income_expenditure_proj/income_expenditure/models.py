@@ -21,7 +21,7 @@ class Person(models.Model):
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
 
 class IEStatement(models.Model):
