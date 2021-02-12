@@ -5,9 +5,17 @@ Create a new Income Expenditure Statement
 {% endblock %}
 
 {% block content %}
-<form method="post">
+<div class="container mx-auto my-5" style="max-width:500px">
+    <h3 class="text-center mb-3">Income &amp; Expenditure Statement</h3>
+    <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+    {% for field in form %}
+        <div class="mb-3">
+            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control {% if field.errors %}is-invalid{% endif %}" id="{{ field.id_for_label }}">
+        </div>
+    {% endfor %}
+    <button class="btn btn-success" type="submit">Create Statement</button>
 </form>
+</div>
 {% endblock %}
