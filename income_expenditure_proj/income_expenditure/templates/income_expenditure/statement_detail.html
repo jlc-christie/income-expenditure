@@ -1,9 +1,115 @@
 {% extends 'income_expenditure/base.html' %}
+{% load humanize %}
 
 {% block title %}
 Income Expenditure Statement #{{ object.id }}
 {% endblock %}
 
 {% block content %}
-    {{ object }}
+    <div class="container my-5">
+        <h1>Statement #{{ object.id }}</h1>
+        <div class="row py-5 g-5 m-auto">
+            <div class="col" id="current-ie-ratio">
+                <div class="card mx-5 pt-3">
+                    <h1 class="m-auto">{% widthratio object.income_expenditure_ratio 1 100 %}%</h1>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Income-to-Expenditure Ratio</h5>
+                        <p class="card-text">The percentage of your income you spend each month.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="current-disposable-income">
+                <div class="card mx-5 pt-3">
+                    <h1 class="m-auto">£{{ object.disposable_income|intcomma }}</h1>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Disposable Income</h5>
+                        <p class="card-text">
+                            How much money you have left over at the end of the month.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="current-ie-grade">
+                <div class="card mx-5 pt-3">
+                    <h1 class="m-auto">{{ object.income_expenditure_grade }}</h1>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Income-to-Expenditure Grade</h5>
+                        <p class="card-text">
+                            Grading system is from D to A. Grade is calculated using your ratio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Breakdown:</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Income</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Expenditure</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Salary</th>
+                    <td>£{{ object.salary|intcomma }}</td>
+                    <th scope="row">Mortgage</th>
+                    <td>£{{ object.mortgage|intcomma }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Other</th>
+                    <td>£{{ object.income_other|intcomma }}</td>
+                    <th scope="row">Rent</th>
+                    <td>£{{ object.rent|intcomma }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row">Utilities</th>
+                    <td>£{{ object.utilities|intcomma }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row">Travel</th>
+                    <td>£{{ object.travel|intcomma }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row">Food</th>
+                    <td>£{{ object.food|intcomma }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row"><u>Debt Payments</u></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row">Loans</th>
+                    <td>£{{ object.loans|intcomma }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row">Credit Cards</th>
+                    <td>£{{ object.credit_cards|intcomma }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <td>£{{ object.income|intcomma }}</td>
+                    <td></td>
+                    <td>£{{ object.expenditure|intcomma }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 {% endblock %}

@@ -11,12 +11,12 @@ active
 
 {% block content %}
     <div class="container-fluid" id="current-ie-status">
-        <div class="row py-5">
+        <div class="row py-5 g-5">
             <div class="col" id="current-ie-ratio">
                 <div class="card mx-5 pt-3">
                     <h1 class="m-auto">{% widthratio latest_statement.income_expenditure_ratio 1 100 %}%</h1>
                     <div class="card-body">
-                        <h5 class="card-title">Income-to-Expenditure Ratio</h5>
+                        <h5 class="card-title text-center">Income-to-Expenditure Ratio</h5>
                         <p class="card-text">The percentage of your income you spend each month.</p>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ active
                 <div class="card mx-5 pt-3">
                     <h1 class="m-auto">£{{ latest_statement.disposable_income|intcomma }}</h1>
                     <div class="card-body">
-                        <h5 class="card-title">Disposable Income</h5>
+                        <h5 class="card-title text-center">Disposable Income</h5>
                         <p class="card-text">
                             How much money you have left over at the end of the month.
                         </p>
@@ -36,7 +36,7 @@ active
                 <div class="card mx-5 pt-3">
                     <h1 class="m-auto">{{ latest_statement.income_expenditure_grade }}</h1>
                     <div class="card-body">
-                        <h5 class="card-title">Income-to-Expenditure Grade</h5>
+                        <h5 class="card-title text-center">Income-to-Expenditure Grade</h5>
                         <p class="card-text">
                             Grading system is from D to A. Grade is calculated using your ratio.
                         </p>
