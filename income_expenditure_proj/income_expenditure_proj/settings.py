@@ -122,3 +122,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CSRF_COOKIE_SECURE = False
+
+LOGIN_REDIRECT_URL = '/statements'
+LOGOUT_REDIRECT_URL = '/accounts/login'

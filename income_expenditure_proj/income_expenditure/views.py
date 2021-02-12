@@ -27,7 +27,7 @@ class CreatePersonView(FormView):
 class IEStatementCreate(LoginRequiredMixin, FormView):
     template_name = 'income_expenditure/new_statement.html'
     form_class = IEStatementForm
-    success_url = reverse_lazy('income_expenditure:new_statement')
+    success_url = reverse_lazy('income_expenditure:statements')
 
     def form_valid(self, form):
         statement = form.save(commit=False)
@@ -39,7 +39,6 @@ class IEStatementCreate(LoginRequiredMixin, FormView):
 class IEStatementList(LoginRequiredMixin, ListView):
     template_name = 'income_expenditure/statement_list.html'
     model = IEStatement
-    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
