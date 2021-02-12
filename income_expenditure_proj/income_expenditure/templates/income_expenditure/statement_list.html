@@ -10,6 +10,7 @@ active
 {% endblock %}
 
 {% block content %}
+    {% if latest_statement %}
     <div class="container-fluid" id="current-ie-status">
         <div class="row py-5 g-5">
             <div class="col" id="current-ie-ratio">
@@ -73,4 +74,11 @@ active
             </table>
         </div>
     </div>
+    {% else %} {# No statements exist yet, so urge user to create statement #}
+    <div class="container my-5 mx-auto">
+        <h1 class="text-center">Get Started</h1>
+        <p class="text-center">Create a new Income &amp; Expenditure Statement to view your grade and disposable income!</p>
+        <button class="btn btn-success m-auto d-flex" onclick="window.location='/statements/new'">Create Statement</button>
+    </div>
+    {% endif %}
 {% endblock %}

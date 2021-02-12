@@ -43,7 +43,8 @@ class IEStatementList(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_statement'] = self.get_queryset().latest('id')
+        if self.get_queryset().count() > 0:
+            context['latest_statement'] = self.get_queryset().latest('id')
         return context
 
     def get_queryset(self):
